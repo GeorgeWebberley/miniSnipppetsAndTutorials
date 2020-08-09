@@ -1,0 +1,4 @@
+{
+   $ONE = "Hello"
+   FILE "abort2.nal"
+}

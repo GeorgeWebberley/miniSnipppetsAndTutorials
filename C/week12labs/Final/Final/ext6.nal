@@ -1,0 +1,30 @@
+{
+   PRINT "-----------------------------------------------"
+   PRINT "You are now in file 'ext6.nal'"
+   PRINTN "Your age is: "
+   PRINT %AGE
+   PRINTN "Your name is: "
+   PRINTN $FIRST
+   PRINTN " "
+   PRINT $LAST
+   PRINT "THIS IS THE FINAL FILE"
+   PRINT "Please type if you would like to SAVE GAME, LOAD GAME or ABORT GAME"
+   IN2STR ( $A , $B )
+
+   IFEQUAL ( $A , "SAVE" ) {
+      PRINT "Enter a name for your save file:"
+      SAVE "ext6.nal"
+      JUMP 1
+   }
+
+   IFEQUAL ( $A , "LOAD" ) {
+      PRINT "Enter the name for the save file you wish to load."
+      LOAD
+   }
+
+   IFEQUAL ( $A , "ABORT" ) {
+      PRINT "ABORTING GAME"
+      ABORT
+   }
+   JUMP 1
+}

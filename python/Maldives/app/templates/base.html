@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ title }} - Maldives</title>
+    <link rel="stylesheet" href="../static/CSS/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Beth+Ellen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Open+Sans&display=swap" rel="stylesheet">
+    <style>
+      .background {
+        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('../static/images/{{ picture }}.jpg');
+      }
+    </style>
+  </head>
+  <body class='background'>
+    <header>
+      <div class="row">
+        <div class="logo">
+          <a href="/index"><img src="../static/images/logo2.png"></a>
+        </div>
+          <ul class="main-nav">
+            <li class="home active list"><a href="/index"> HOME </a></li>
+            <li class="gallery list"><a href=""> GALLERY </a></li>
+            <li class="about list"><a href=""> ABOUT </a></li>
+            <li class="contact list"><a href=""> CONTACT </a></li>
+            <li class="bookings list"><a href=""> BOOKINGS </a></li>
+            <li class="FAQ list"><a href=""> FAQ </a></li>
+          </ul>
+      </div>
+
+    </header>
+
+<div class="page-container">
+  <div class="content-wrap">
+
+
+
+    {% block content %}{% endblock %}
+  </div>
+
+    <div class="footer">
+      <div class="box">
+        <span>Explore</span>
+        <ul>
+          <li><a href="/explore/dining">Dining</a></li>
+          <li><a href="/explore/swimming">Swimming</a></li>
+          <li><a href="/explore/bar">Bar</a></li>
+          <li><a href="/explore/beaches">Beaches</a></li>
+          <li><a href="/explore/villas">Villas</a></li>
+          <li><a href="/explore/transport">Transport</a></li>
+        </ul>
+      </div>
+      <div class="box">
+        <span>Contact</span>
+        <table>
+          <tr>
+            <td>Email:</td>
+            <td>georgewebberley@googlemail.com</td>
+          </tr>
+          <tr>
+            <td>Phone:</td>
+            <td>07540643426</td>
+          </tr>
+          <tr>
+            <td>Address:</td>
+            <td>Flat 39 Huller and Cheese
+            <br>Redcliff Backs
+            <br>Bristol
+            <br>BS1 6WJ</td>
+          </tr>
+        </table>
+      </div>
+
+
+    </div>
+
+</div>
+
+    <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

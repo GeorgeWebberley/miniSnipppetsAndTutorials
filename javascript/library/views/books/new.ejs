@@ -1,0 +1,10 @@
+<h2 class="page-header">New Book</h2>
+<!-- As the form in this case is also sending an image, we need to specify multipart in the enctype -->
+<form class="" action="/books" method="post" enctype="multipart/form-data">
+  <%- include ("_form_fields") %>
+  <div class="form-row form-row-end btn-row">
+    <!-- links are used for cancel, buttons used for form submits -->
+    <a class="btn btn-danger" href="/books">Cancel</a>
+    <button class="btn btn-primary" type="submit" name="button">Create</button>
+  </div>
+</form>

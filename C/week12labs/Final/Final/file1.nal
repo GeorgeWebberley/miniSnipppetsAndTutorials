@@ -1,0 +1,5 @@
+{
+   PRINT "file1.nal before."
+   FILE "file2.nal"
+   PRINT "file1.nal after."
+}

@@ -1,0 +1,42 @@
+**************WARNING*************
+When saving game, if a file already exists in the same directory with the same name and extension (.save) it will overwrite the file.
+**********************************
+
+NOTE: As my extension and interpreter can still be used separately, I have not separated them with #ifdef.
+This is because I have also altered the .nal files to account for the extension. If the extension is separated
+then these files may encounter errors if trying to save/load game (as the .nal files would recognise it but the c file would not.) 
+For the extension I decided to implement a save and a load feature, common in most games.
+
+To do this I have extended the formal grammar slightly:
+
+<SAVE> := "SAVE" <STRCON>
+where STRCON is the name of the current file you are in.
+
+<LOAD> := "LOAD"
+
+The save function prompts the user to enter their name and creates a .save file in the current directory.
+On the first line of the .save file it prints the name of the current file so that the program knows where
+to start when loading.
+It then carries out an mvm_print() of all the current variables in the format [key](value) [key](value)
+and saves this to the file.
+Old save files with the same name will be overwritten.
+
+The load function scans the current directory for .save files and prints them for the user to see.
+It then prompts the user to type the name of the file that they wish to load.
+The program then parses the information in the .save file. It breaks up the keys and values and saves
+them inside a new mvm. It then creates a new program and opens the file from the top line of the .save file.
+
+The new "end" for the program is now when the program returns to this load function and therefore I set
+the abort_flag of the old program to 1 to ensure it exits with appropriate frees.
+
+I have altered the escape211 files so that it can now read SAVE GAME and LOAD GAME as commands (attached).
+The game can be saved or loaded at any point.
+
+I have also included some ext.nal files that I used to test it worked correctly. These files prompt the
+user for name and age and asks whether they want to save, load or continue. If continue then a new file is
+opened with the same questions. It shows that the save/load feature saves the variables correctly, can update them
+if need be and also opens the correct file when loading.
+
+Limitations at the moment are that the save files are not game specific (for example it is possible to load escape211 from
+the ext files). To take this further I could perhaps save the name of the game as the extension, and then the load
+game function searches the directory for extensions that match the current game.

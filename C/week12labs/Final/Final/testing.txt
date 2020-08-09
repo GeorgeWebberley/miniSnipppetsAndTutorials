@@ -1,0 +1,44 @@
+I initially thought of creating a long text file that tests the different functions in my c file, however
+I soon realised there wasn't an easy way to test 'failures' without exiting the program because of the way
+the 'error' messages have been set up.
+
+In the end I decided to go with an #ifdef approach to my testing and test the functions in a test() function.
+To allow this to work I have created a 'test_flag' integer inside my program structure. This test_flag is initialised
+to 0 and when it reaches an error it sets the flag to 1 instead of exiting the program (by using #ifdef).
+Using #ifdef I can also remove any function calls inside functions, allowing me to isolate functions to be tested
+without worrying about the entire program running.
+
+First of all I test the functions produce the correct result (e.g. rnd() generates a random number between 0-99,
+inc() increases the number by 1, whatVarcon() returns the correct type of variable/constant etc.).
+I then carry out tests to ensure the functions parse the input correctly (e.g. brackets and commas in the correct places,
+correct Instruct names etc.).
+
+The make file creates a 'tests' program that can be run separately to the 'parse' and 'interp' programs and should print
+'Tests passed!' if all the tests succeed.
+
+Limitations:
+One of the problems with running my tests in this manner was that I could not think of a way to fully test
+the file handling functions. I was able to test the parsing of these functions as well as make sample 'strings'
+to act like files and be processed/converted to a series of 'words'. However I was not able to actually test
+the opening and entering into a different file. To test this I used sample text files (file1.nal) although I do
+not feel it fully tests the functionality.
+
+In a similar way I created separate abort.nal files (abort1.nal) that check there are no memory leaks when aborting from nested files.
+
+Similar to file handling, I found it difficult to test the functions that take user input through scanf.
+With these functions I tested the parsing to ensure the correct variable names were being passed to the function,
+as well as the correct formal grammar. I then checked the return value of the scanf to ensure that
+the correct number of inputs were given by the user. I also added dummy inputs to replace the scanf inside
+the functions (isolated with #ifdef TEST) which allows me to test the functionality of the scanning functions
+to a certain degree (but not extensively).
+
+Finally, a limitation of this testing method is that it made my code longer and messier. Having to include lots of #ifdef TESTS has
+increased the length of many functions and sometimes made simple pieces of code more complex.
+
+Executables nal.mk:
+./parse <file>
+./interp <file>
+./tests
+
+To test the additional nal files:
+make -f nal.mk test

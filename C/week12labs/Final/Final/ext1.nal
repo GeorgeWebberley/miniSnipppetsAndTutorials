@@ -1,0 +1,28 @@
+{
+   PRINT "You are inside ext1.nal"
+   PRINT "Please type if you would like to SAVE GAME, LOAD GAME or CONTINUE GAME"
+   IN2STR ( $A , $B )
+
+   IFEQUAL ( $A , "SAVE" ) {
+      PRINT "Enter a name for your save file:"
+      SAVE "ext1.nal"
+      JUMP 1
+   }
+
+   IFEQUAL ( $A , "LOAD" ) {
+      PRINT "Enter the name for the save file you wish to load."
+      LOAD
+   }
+
+   IFEQUAL ( $A , "CONTINUE" ) {
+      PRINT "Please enter your age (in numbers)"
+      INNUM ( %AGE )
+      PRINT "Please enter your first and last name."
+      IN2STR ( $FIRST , $LAST )
+      PRINT "DETAILS SAVED"
+      FILE "ext2.nal"
+   }
+
+   JUMP 3
+
+}

@@ -1,0 +1,608 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.background {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+header {
+}
+
+.main-nav {
+  float:right;
+  list-style: none;
+  margin-top: 30px;
+}
+
+.main-nav li {
+  display: inline-block;
+}
+
+.main-nav li a{
+  color: white;
+  text-decoration: none;
+  padding: 5px 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  border: 1px solid transparent;
+}
+
+
+.main-nav li.active a {
+  border: 1px solid white;
+}
+
+.main-nav li a:hover {
+  border: 1px solid #9eabb0;
+}
+
+.main-nav li a::after {
+  border: 1px solid #9eabb0;
+}
+
+
+.logo img{
+  position: absolute;
+  width: auto;
+  height: 70px;
+  float: left;
+  z-index: 99;
+  transition: all 1s ease-in;
+}
+
+.logo img:hover{
+  transform: rotate(45deg);
+}
+
+body {
+  font-family: monospace;
+}
+
+.row {
+  max-width: 100%;
+  height: 10vh;
+}
+
+.hero {
+  position: absolute;
+  width: 100%;
+  margin-left: 0;
+  margin-top: 0;
+  z-index: 0;
+}
+
+.index-title {
+  color: white;
+
+  font-size: 70px;
+  text-align: center;
+  margin-top: 30vh;
+  /* font-family: 'Beth Ellen', cursive; */
+  font-family: 'Amatic SC', cursive;
+}
+
+.button {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.btn {
+  border: 1px solid white;
+  padding: 10px 30px;
+  color: white;
+  text-decoration: none;
+  margin-right: 5px;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.btn-one {
+  background-color: orange;
+  font-family: "Roboto", sans-serif;
+}
+
+.btn-two {
+  font-family: "Roboto", sans-serif;
+}
+
+.btn-two:hover {
+  background-color: orange;
+  transition: all 0.5s ease-in;
+}
+
+.index-filler {
+  width: 100%;
+  height: 800px;
+  position: relative;
+  /* background-color: red; */
+  z-index: -1;
+}
+
+
+/* ----------------CSS for 'Explore' page below here------------------ */
+
+.container {
+  text-align:center;
+  height: 800px;
+  width: auto;
+}
+
+.blocks {
+  position:relative;
+  /* top: 100px;
+  left:170px; */
+  text-align: center;
+  display: inline-block;
+  height: 650px;
+  width: 930px;
+  margin-top:50px;
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2));
+  /* background-color: red; */
+  /* top: 50%; */
+  padding-top:20px;
+}
+
+.block {
+  text-align: center;
+  display: inline-block;
+  height:270px;
+  width: 250px;
+  /* background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)); */
+  background-color: rgba(255,255,255,0.2);
+  color: white;
+  transition: all 0.3s;
+  animation-play-state: running;
+}
+
+.block:hover {
+  background-color: rgba(255,255,255,0);
+  color: grey;
+  box-shadow: 5px 5px 20px black;
+}
+
+.explore-link{
+  display: inline-block;
+  margin: 20px 20px;
+}
+
+.explore-link:hover{
+  /* animation-play-state: running; */
+  background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8));
+}
+
+.block img{
+  /* Below is my testing the slideshow */
+  position: absolute;
+  width:250px;
+  margin-left: -125px;
+  animation: showMe 16s linear infinite 0s forwards;
+	animation-play-state: paused;
+
+
+  /* Testing animation */
+
+  /* Below is the previous working static */
+  /* width: 250px;
+  position: relative;
+  margin:0; */
+}
+
+.block img:hover{
+  animation-play-state: running;
+}
+
+/* Keyframes for picture transition on 'explore' page */
+@keyframes showMe {
+  0% { opacity: 0; }
+  10% {opacity: 1; }
+  25% { opacity: 1; }
+  35% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+
+
+.block img:nth-child(1){
+  z-index: 9;
+  animation-delay: 0s;
+}
+.block img:nth-child(2){
+  animation-delay: 4s;
+  z-index: 8;
+}
+.block img:nth-child(3){
+  animation-delay: 8s;
+  z-index: 7;
+}
+.block img:nth-child(4){
+  animation-delay: 12s;
+  z-index: 6;
+}
+
+
+
+.explore-title{
+  margin-top: 190px;
+  padding-top: 20px;
+  /* text-transform: uppercase; */
+  /* font-family: "Roboto", sans-serif; */
+  /* font-family: 'Open Sans', sans-serif; */
+  /* color: #dae0eb; */
+  font-family: 'Fira Sans', sans-serif;
+  /* color: white; */
+  font-size: 30px;
+
+}
+
+
+
+
+
+
+/* ----------------CSS for 'Dining' page below here------------------ */
+
+.dining-pic-box {
+  margin-top: 0;
+  padding: 0;
+  display: grid;
+  width: 100%;
+}
+
+.dining-pic {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  margin: auto;
+}
+
+.dining-pic-text {
+  position: relative;
+  height: 100%;
+  bottom: 0;
+}
+
+.dining-pic-text span {
+  position: absolute;
+  bottom: 0;
+  font-size: 80px;
+  color: rgba(255,255,255,0.5);
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.dining-info {
+  background-color: rgb(255,255,255,0.3);
+}
+
+.dining-info-box {
+  width: 100%;
+  height: 600px;
+}
+
+.dining-pic-box-two {
+  display: inline-block;
+  height: 100%;
+  width: 50%;
+  float: left;
+  text-align: center;
+  margin-top: 0;
+
+}
+
+.dining-pic-two {
+  /* float: right; */
+  display: inline-block;
+  width: 90%;
+  /* max-height: 620px;
+  max-width: 433px; */
+  max-height: 500px;
+  max-width: 340px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
+
+.dining-text-box-two {
+  float: right;
+  display: inline-block;
+  height: 100%;
+  width: 50%;
+}
+
+.dining-title {
+  color: white;
+  /* font-size: 70px; */
+  font-size: 80px;
+  text-align: center;
+  margin-top: 60px;
+  font-family: 'Amatic SC', cursive;
+  margin-bottom: 50px;
+}
+
+.dining-text {
+  margin-top: 0px;
+  font-size: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  font-family: 'Fira Sans', sans-serif;
+  color: white;
+}
+
+hr {
+    border: 0;
+    height: 3px;
+    background-image: linear-gradient(to right, rgb(0,0,0,0.3)), rgba(0, 0, 0, 1), rgb(0,0,0,0.3));
+}
+
+.dining-info-box-two {
+  width: 100%;
+  height: 500px;
+}
+
+.dining-text-box-three {
+  float: left;
+  display: inline-block;
+  height: 100%;
+  width: 50%;
+  margin-top: 0;
+}
+
+.dining-pic-box-three {
+  display: inline-block;
+  height: 100%;
+  width: 50%;
+  float: right;
+  text-align: center;
+  margin-top: 0;
+
+}
+
+.dining-pic-three {
+  /* float: right; */
+  display: inline-block;
+  width: 90%;
+  /* max-height: 620px;
+  max-width: 433px; */
+  max-height: 500px;
+  max-width: 340px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
+
+
+/* --------------Content below here is relating to the footer on the pages--------------- */
+
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+
+.content-wrap{
+  padding-bottom: 225px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  height: 225px;
+  border-top: 5px solid white;
+  /* background-color: #00183d; */
+  /* background-color: #06002e; */
+  /* background-image: linear-gradient(#000230, #000117); */
+  background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.5));
+  justify-content: space-around;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.box {
+  height:auto;
+  width: 50%;
+  /* background-color: #00183d; */
+  text-align: center;
+  color: rgba(0,0,0,0.7);
+  padding: 10px;
+  /* border-right: 1px solid rgb(176,176,176,0.3); */
+  border-width: 1px;
+  border-style: solid;
+  border-image:
+    linear-gradient(
+      to bottom,
+      white,
+      rgba(0, 0, 0, 0)
+    ) 1 100%;
+}
+
+.box span {
+  /* color: #d9d9d9; */
+  /* color: #212121; */
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.box ul {
+  margin-top: 10px;
+}
+.box  ul li{
+  list-style: none;
+  padding: 5px;
+  font-size: 15px;
+}
+
+.box a {
+  text-decoration: none;
+  color: rgba(0,0,0,0.7);
+  padding:10px;
+}
+
+.box td {
+  text-align: left;
+  padding: 12px;
+  font-size: 15px;
+}
+
+
+
+/* ---------------CSS FOR VIDEO------------------ */
+.video-container{
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: block;
+  text-align: center;
+}
+
+
+.video {
+  width:1000px;
+  height:800px;
+}
+
+
+.close {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  font-size: 40px;
+  color: white;
+  background-color: black;
+  text-decoration: none;
+  vertical-align: top;
+  opacity: 0.7;
+  transition: all 0.3 ease;
+}
+
+.close:hover {
+  opacity: 1;
+}
+
+
+@media screen and (max-width: 1140px) {
+    .btn  { padding: 10px 30px; }
+    .main-nav li a { padding: 5px 10px; }
+    .blocks {
+      width:600px;
+      height:975px;
+     }
+     .background{
+       background-image: black;
+     }
+     .dining-text{
+       font-size: 15px;
+     }
+     .dining-title{
+       font-size: 60px;
+     }
+     .dining-info-box{
+       display: inline-block;
+     }
+     .dining-info-box-two{
+       height: 450px;
+     }
+     .explore-filler {
+       height:300px;
+       display: block;
+     }
+
+}
+@media screen and (max-width: 600px) {
+    .btn  { padding: 10px 10px; }
+    .main-nav li a {
+      font-size: 12px;
+      padding: 5px 0px;
+      border: 1px solid transparent;
+     }
+     .main-nav li.active a {
+       border: 1px solid transparent;
+       border-bottom: 1px solid white;
+     }
+    .logo img{
+      width: 5px;
+      opacity: 0;
+    }
+    .blocks {
+      width:300px;
+      height:1900px;
+    }
+
+    .dining-text-box-two{
+      /* float: none; */
+      /* display: block; */
+      width: 98%;
+      margin-left: 10px;
+      height:auto;
+      /* margin-right: 10px; */
+    }
+    .dining-pic-box-two{
+      /* position:absolute; */
+      /* float: none; */
+      /* display:block; */
+      width: 100%;
+    }
+    .dining-title {
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+    .dining-info-box{
+      height:auto;
+    }
+    .dining-pic-box{
+      margin-bottom: 0px;
+    }
+    .dining-pic-box-two{
+      float:none;
+      margin-top: 20px;
+    }
+    .dining-pic-two{
+      float:none;
+      margin-top: 0;
+    }
+    .dining-info-box-two{
+      height:760px;
+    }
+    .dining-text-box-three {
+      width:98%;
+      height: auto;
+      float: none;
+    }
+    .dining-pic-box-three {
+      width: 100%;
+      height: auto;
+    }
+    .dining-pic-three {
+      margin-top: 10px;
+    }
+    .box td {
+      padding: 0;
+    }
+    .box {
+      width:100%;
+    }
+    .footer {
+      justify-content: none;
+      flex-direction: column;
+      height: 450px;
+    }
+    .content-wrap{
+      padding-bottom: 450px;
+    }
+    .index-filler {
+      height: 800px;
+    }
+    .explore-filler {
+      height:1200px;
+      display: block;
+    }
+
+}

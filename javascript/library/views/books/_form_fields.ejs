@@ -1,0 +1,47 @@
+<!-- the name of this file has underscores which helps identify that it is a partial -->
+<div class="form-row">
+  <div class="form-item">
+    <label>Title</label>
+    <!-- // We specify name="title" so that we can access it from our server by typing body.title -->
+    <input type="text" name="title" value="<%= book.title %>">
+  </div>
+  <div class="form-item">
+    <label>Author</label>
+    <!-- select and options elements means a drop down list -->
+    <select name="author">
+    <% authors.forEach(author => { %>
+      <!-- book.author here is actually the id (if you check the Schema) -->
+      <% if (author.id === book.author) { %>
+        <!-- The selected attribute here means the author will be pre-selected -->
+        <option selected label="<%= author.name %>" value="<%= author.id %>"><%= author.name %></option>
+      <% } else {%>
+        <option label="<%= author.name %>" value="<%= author.id %>"><%= author.name %></option>
+      <% } %>
+    <% }) %>
+    </select>
+  </div>
+</div>
+<div class="form-row">
+  <div class="form-item">
+    <label>Publish Date</label>
+     <!-- format the date-time so that we only save the date -->
+    <input type="date" name="publishDate"
+           value="<%= book.publishDate == null ? '':
+           book.publishDate.toISOString().split('T')[0] %>">
+  </div>
+  <div class="form-item">
+    <label>Page Count</label>
+    <!-- set the minimum to 1 (as a book must have at least 1 page) -->
+    <input type="number" name="pageCount" min="1" value="<%= book.pageCount %>">
+  </div>
+</div>
+<div class="form-row">
+  <div class="form-item-no-grow">
+    <label>Cover</label>
+    <input type="file" name="cover">
+  </div>
+  <div class="form-item">
+    <label>Description</label>
+    <textarea name="description"><%= book.description %></textarea>
+  </div>
+</div>

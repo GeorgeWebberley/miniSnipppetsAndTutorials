@@ -1,0 +1,4 @@
+{
+   $TWO = "world"
+   FILE "abort3.nal"
+}

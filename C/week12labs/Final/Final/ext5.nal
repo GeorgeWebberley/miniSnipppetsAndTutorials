@@ -1,0 +1,37 @@
+{
+   PRINT "-----------------------------------------------"
+   PRINT "You are now in file 'ext5.nal'"
+   PRINTN "Your age is: "
+   PRINT %AGE
+   PRINTN "Your name is: "
+   PRINTN $FIRST
+   PRINTN " "
+   PRINT $LAST
+   PRINT "Please type if you would like to SAVE GAME, LOAD GAME or CONTINUE GAME"
+   IN2STR ( $A , $B )
+
+   IFEQUAL ( $A , "SAVE" ) {
+      PRINT "Enter a name for your save file:"
+      SAVE "ext5.nal"
+      JUMP 1
+   }
+
+   IFEQUAL ( $A , "LOAD" ) {
+      PRINT "Enter the name for the save file you wish to load."
+      LOAD
+   }
+
+   IFEQUAL ( $A , "CONTINUE" ) {
+      PRINT "Type 1 if you want to update your age and name or 2 if not."
+      INNUM ( %CHOICE )
+      IFEQUAL ( %CHOICE , 1 ) {
+         PRINT "Please enter your age (in numbers)"
+         INNUM ( %AGE )
+         PRINT "Please enter your first and last name."
+         IN2STR ( $FIRST , $LAST )
+         PRINT "DETAILS SAVED"
+      }
+      FILE "ext6.nal"
+   }
+   JUMP 1
+}

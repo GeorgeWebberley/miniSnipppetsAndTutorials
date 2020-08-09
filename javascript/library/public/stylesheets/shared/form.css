@@ -1,0 +1,77 @@
+:root {
+  --form-label-font-size: 1.2rem;
+  --form-input-background-color: hsl(var(--color-base-hue), 100%, 31%);
+  --form-input-border-color: hsl(var(--color-base-hue), 100%, 50%);
+  --form-input-border-color-light: hsl(var(--color-base-hue), 100%, 80%);
+}
+
+.form-row {
+  /* ensures things are horizontal to eachother */
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.form-item {
+  display: flex;
+  /* this ensures our label will always be above our input field */
+  flex-direction: column;
+  margin-left: 2rem;
+  /* ensures all children grow at the same rate */
+  flex-grow: 1;
+  /* both grow from the same point */
+  flex-basis: 0;
+}
+
+/* aka the fields on the left of the form */
+.form-item:first-child {
+  margin-left: 0;
+}
+
+.form-item-no-grow {
+  display: flex;
+  /* this ensures our label will always be above our input field */
+  flex-direction: column;
+  /* will grow at a different rate to other form-items that have flex-grow set to 1 */
+  flex-grow: 0;
+  padding-right: 0;
+}
+
+.form-row-end {
+  justify-content: flex-end;
+}
+
+.form-item > label {
+  font-size: var(--form-label-font-size);
+  margin-bottom: 0.25rem;
+  margin-left: 0.25rem;
+}
+
+.form-item input,
+.form-item select,
+.form-item textarea {
+  height: 2rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--form-input-border-color);
+  background-color: var(--form-input-background-color);
+  color: var(--color-text-light);
+  font-size: 1rem;
+  font-weight: normal;
+  font-family: "Comic Neue", cursive;
+  outline: none;
+}
+
+.form-item textarea {
+  height: 10rem;
+  resize: none;
+}
+
+.form-item select option {
+  background-color: black;
+}
+
+.form-item input:focus,
+.form-item select:focus,
+.form-item textarea:focus {
+  border-color: var(--form-input-border-color-light);
+}
